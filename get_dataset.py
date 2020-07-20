@@ -1,10 +1,9 @@
 from oxford_iii_pet import OxfordPet
-from SaliencyCommon import SaliencyCommon
+
 
 def get_dataset(args, split='train'):
 
-    #dataset_to_return = OxfordPet(args, split)
-    dataset_to_return = SaliencyCommon(args, split)
+    dataset_to_return = OxfordPet(args, split)
 
     return dataset_to_return
 

@@ -37,21 +37,12 @@ def two_stage_training(dataset_path, model_load, model_name, dataset_name, im_si
 
 if __name__ == "__main__":
 
-    #model_name = "UMobV2"
-    model_name = "UResNext"
+    model_name = "UMobV2" # another model option is "UResNext"
 
-    # dataset_name = 'OxfordPet'
-    # dataset_path = 'D:/Olga/data/Oxford_iit_pet'  # path to oxford pet dataset
+    dataset_name = 'OxfordPet'
+    dataset_path = './data/Oxford_iit_pet'  # path to oxford pet dataset
 
-    #model_load = './trained_models/OxfordPet_UMobV2_128_from_anneal_V1.pt'
     model_load = './trained_models/OxfordPet_UResNext_128_from_anneal_V1.pt'
-
-    dataset_name = 'DUT'
-    dataset_path = 'D:/Olga/data/Saliency/DUT-OMRON'
-
-    # dataset_name = 'ECSSD'
-    # dataset_path = 'D:/Olga/data/Saliency/ECSSD'
-    #
 
     two_stage_training(dataset_path, model_load, model_name, dataset_name, im_size=128)
 
