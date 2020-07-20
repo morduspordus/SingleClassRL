@@ -4,6 +4,7 @@ import numpy as np
 
 from PIL import Image, ImageOps, ImageFilter
 
+
 class Normalize(object):
     """Normalize a tensor image with mean and standard deviation.
     Args:
@@ -66,6 +67,7 @@ class ToTensor(object):
         return {'image': img,
                 'label': mask}
 
+
 class ToTensorImage(object):
     """Convert ndarrays in sample to Tensors."""
 
@@ -118,7 +120,7 @@ def denormalizeimage(images, mean=(0., 0., 0.), std=(1., 1., 1.)):
     images = images.transpose((0,2,3,1))
     images *= std
     images += mean
-    images *=255.0
+    images *= 255.0
     # N*H*W*C to N*C*H*W
     images = images.transpose((0,3,1,2))
     return torch.tensor(images)

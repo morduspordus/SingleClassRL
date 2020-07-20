@@ -90,7 +90,7 @@ def regularized_loss_per_channel_diag(mask_d1, mask_d2, cl, prediction, true_cla
     return((h + v)/2.0)
 
 
-def  regularized_loss_per_channel(mask_h, mask_v, cl, prediction, true_class, negative_class=False):
+def regularized_loss_per_channel(mask_h, mask_v, cl, prediction, true_class, negative_class=False):
 
     if negative_class:
         prediction = extract_needed_predictions(true_class, prediction, cl, extract_condition_equal_fn)
@@ -109,8 +109,7 @@ def  regularized_loss_per_channel(mask_h, mask_v, cl, prediction, true_class, ne
     h = torch.mean(abs(left - right) * mask_h)
     v = torch.mean(abs(top - bottom) * mask_v)
 
-    return((h + v)/2.0)
-
+    return (h + v)/2.0
 
 
 def middle_sq_loss_per_channel(cl, prediction, true_class, square_w):
@@ -154,7 +153,6 @@ def extract_condition_equal_fn(true_class, cl):
 
 def extract_condition_not_equal_fn(true_class, cl):
     return true_class != cl
-
 
 
 def extract_needed_mask(mask, true_class,  cl):

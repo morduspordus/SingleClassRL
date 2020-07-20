@@ -41,9 +41,6 @@ if __name__ == "__main__":
 
     dataset_name = 'OxfordPet'
     dataset_path = './data/Oxford_iit_pet'  # path to oxford pet dataset
-
-    model_load = './trained_models/OxfordPet_UResNext_128_from_anneal_V1.pt'
+    model_load = './trained_models/OxfordPet_UMobV2_128_from_anneal_V1.pt'
 
     two_stage_training(dataset_path, model_load, model_name, dataset_name, im_size=128)
-
-

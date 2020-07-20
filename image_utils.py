@@ -36,7 +36,6 @@ def color_map(N=256, normalized=False):
     return cmap
 
 
-
 def transform_to_image(inp, mean_image, std_image):
 
     """ Undoes changes in the mean and standard deviation """
@@ -48,7 +47,6 @@ def transform_to_image(inp, mean_image, std_image):
     inp = np.clip(inp, 0, 1)
 
     return inp
-
 
 
 def visualize_images(**images):
@@ -170,7 +168,6 @@ def encode_segmap(mask):
         label_mask[np.where(np.all(mask == label, axis=-1))[:2]] = ii
     label_mask = label_mask.astype(int)
     return label_mask
-
 
 
 def get_oxford_pet_labels():

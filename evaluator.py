@@ -1,13 +1,14 @@
 import torch
 
 class Evaluator(object):
-    """ Standard evaluation metrics """
+    """
+    Standard evaluation metrics
+    """
 
     def __init__(self, num_classes, device):
         self.num_classes = num_classes
         self.device = device
         self.confusion_matrix = torch.zeros((self.num_classes,)*2).to(self.device)
-
 
     def Pixel_Accuracy(self):
         Acc = torch.diag(self.confusion_matrix).sum() / self.confusion_matrix.sum()
@@ -40,7 +41,6 @@ class Evaluator(object):
 
         return jaccard.cpu().numpy()
 
-
     def f_score(self, betaSq=0.3):
 
         epsilon = 1e-12
@@ -54,9 +54,7 @@ class Evaluator(object):
 
         f_score = (1+betaSq)*precision*recall/(betaSq*precision+recall)
 
-
         return f_score.cpu().numpy()
-
 
     def _generate_matrix(self, gt, pr):
         target_mask = (gt >= 0) & (gt < self.num_classes)

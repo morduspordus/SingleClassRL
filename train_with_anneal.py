@@ -39,6 +39,8 @@ def two_stage_training(model_name, dataset_name, dataset_path, im_size):
 
 if __name__ == "__main__":
     dataset_name = 'OxfordPet'
+    model_name = "UMobV2" # another model option is "UResNext"
+
     dataset_path = './data/Oxford_iit_pet'  # path to oxford pet dataset
 
     two_stage_training(model_name, dataset_name, dataset_path, im_size=128)

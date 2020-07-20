@@ -3,7 +3,6 @@ import torch.nn as nn
 import loss_utils as UF
 
 
-
 class SparseCRFLoss(nn.Module):
     __name__ = 'sparseCRF'
 
@@ -69,7 +68,6 @@ class VolumeLoss(nn.Module):
         self.cl = cl
         self.negative_class = negative_class
         self.vol_min = vol_min
-
 
     def forward(self, y_pr, y_gt, img, true_class):
 

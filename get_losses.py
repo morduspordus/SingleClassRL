@@ -127,20 +127,23 @@ class standard_complete_loss():
 
     def loss_names(self):
 
-        names = {'sparseCRF': {'weight': self.reg_weight, 'sigma': self.sigma,
-                                    'subtract_eps': self.subtract_eps,
-                                    'diag': self.with_diag},
-                  'volume_loss': {'weight': self.vol_weight,
+        names = {
+                'sparseCRF': {'weight': self.reg_weight, 'sigma': self.sigma,
+                                'subtract_eps': self.subtract_eps,
+                                'diag': self.with_diag},
+
+                'volume_loss': {'weight': self.vol_weight,
                                   'fraction': 0.5,
                                   'cl': 1,
                                   'weight_s': self.vol_weight_s,
                                   'vol_min': self.vol_min},
+
                   'middle_sq_loss': {'weight': 1.0, 'square_w': 2},
+
                   'border_loss': {'weight': 1.0, 'border_w': 3, 'cl': 0}
                   }
 
         return 'sparseCRF', names
-
 
 
 class standard_complete_loss_with_negative(standard_complete_loss):
